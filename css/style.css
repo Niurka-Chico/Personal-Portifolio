@@ -108,7 +108,7 @@ header .image{
     position: relative;
 }
 header .image::before{
-    content: "o";
+    content: "k";
     position: absolute;
     top:0;
     left:50%;

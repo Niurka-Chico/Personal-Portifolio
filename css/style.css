@@ -1,109 +1,139 @@
-html{
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
     box-sizing: border-box;
-    height: 100%;
 
 }
-*,
-*::before,
-*::after{
-    box-sizing: inherit;
-    margin: 0;
-    padding:0;
+img{
+    width: 100%;
+    display: flex;
+
+}
+a{
+    text-decoration: none;
 }
 body{
-    align-items:center;
-    background: linear-gradient(320deg, #4a0d62, #68477e, #836497) ;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ece4cd;
+}
+nav{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
     display: flex;
-    font-family: Dosis, sans-serif;
-    font-display: swap;
-    height: inherit;
-    justify-content: center;
+    align-items: center;
+    justify-content:space-betwee;
+    gap: 2rem;
 }
-.wrapper
+.nav-logo{
+    max-width: 100px;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.link a
 {
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-
-    border-radius: 16px;
-    box-shadow: 0  4px 30px rgba(rgb(169, 89, 206));
-    color: aliceblue;
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: rgba(rgb(48, 3, 69));
-    border: 1px solid rgba(rgb(99, 19, 125));
-    flex-basis:400px ;
-    height:540px;
-    padding:20px 350px;
-} 
-.screen{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(rgb(249, 247, 250));
-    border: 1px solid rgba(169, 89, 206);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px  rgba(rgb(169, 89, 206));
-    color: rgb(213, 216, 219);
-    font-size: 35px;
-    overflow: auto;
-    padding: 20px;
-    text-align: right;
-    width: 326px;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #fff;
 }
-.calc-button{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgb(172, 134, 188);
-    border: 1px solid rgba(rgb(216, 198, 224));
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(rgb(169, 89, 206));
-    color: rgb(60, 24, 78);
-    flex-basis:20%;
-    font-family: inherit;
-    font-size: 24px;
-    height: 65px;  
-    padding: 1px 30px;
+.link ::after{
+    content:"";
+    position: absolute;
+    height: 2px;
+    width:0 ;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
 }
-
-.calc-buttons-row{
-    width: 100%;
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border: 1px solid rgba(rgb(216, 198, 224));
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(rgb(169, 89, 206));
-    color: rgb(91, 59, 99);
-    flex-basis:20%;
-    font-family: inherit;
-    font-size: 24px;
-    height: 65px;  
+.link a:hover::after{
+    width: 70%;
 }
-.calc-button:last-child
-{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgb(196, 175, 205);
-    border: 1px solid rgba(rgb(216, 198, 224));
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(rgb(169, 89, 206));
-    color: rgb(91, 59, 99);
-    color: #4a0d62;
-    background: #836497;
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #efefef;
+    background-color: #516044;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.calc-button:last-child:hover{
-    background-color: inherit;
-    color:inherit;
+.container{
+    max-width: 120px;
+    margin: auto;
+    padding: 5rem 2rem;
 }
-.calc-button:hover{
-    background-color: inherit;
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #d6d6d6;
+    z-index: -100;
 }
-.calc-button:active{
-    background-color: antiquewhite;
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center;
+    gap: 2rem;
+}
+header .content h4{
+    margin-bottom: 1rem;
+    color: #b7b0a1;
+    font-size: 1rem;
+    font-weight: 600;
+}
+header .content h1{
+    color:#D4AF37;
+    margin-bottom:1rem;
+    font-size:3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+header .content h1 span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
 
 }
-.double{
-    flex-basis: 47%;
-
+header .content p{
+    margin-bottom: 2rem;
+    color: #ccc;
 }
-.triple{
-    flex-basis: 73%;
+header .image{
+    position: relative;
+}
+header .image::before{
+    content: "o";
+    position: absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 38rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: #dbd087;
+    opacity: 0.2;
+    z-index: -100;
+}
+header .image img{
+    max-width: 600px;
+    margin: auto;
+}
+section header{
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
+}
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center;
+    gap: 2rem;
 }
